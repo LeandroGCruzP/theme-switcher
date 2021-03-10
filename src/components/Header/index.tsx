@@ -2,6 +2,9 @@ import React, { useContext } from "react";
 import Switch from "react-switch";
 import { ThemeContext } from "styled-components";
 
+import Lune from "../../icons/luna.png";
+import Sun from "../../icons/sol.png";
+
 import { Container } from "./styles";
 
 interface Props {
@@ -18,9 +21,31 @@ const Header: React.FC<Props> = ({ toggleTheme }) => {
       <Switch
         onChange={toggleTheme}
         checked={title === "dark"}
-        checkedIcon={false}
-        uncheckedIcon={false}
-        height={10}
+        checkedIcon={
+          <img
+            src={Sun}
+            style={{
+              height: 18,
+              width: 18,
+              marginTop: 2,
+              display: "flex",
+              borderRight: 0,
+            }}
+          />
+        }
+        uncheckedIcon={
+          <img
+            src={Lune}
+            style={{
+              height: 15,
+              width: 15,
+              marginTop: 1,
+              display: "flex",
+              borderRight: 0,
+            }}
+          />
+        }
+        height={18}
         width={40}
         handleDiameter={20}
         offColor={colors.quaternary}
